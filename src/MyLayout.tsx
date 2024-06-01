@@ -4,12 +4,14 @@ import { IoHome } from "react-icons/io5";
 import { MdOutlineKeyboardArrowRight, MdPerson } from "react-icons/md";
 import Header from "./components/Header";
 import Icon from "./components/Icon";
+import { Outlet, useNavigate } from "react-router";
 
 const { Sider, Content } = Layout;
 
 const MyLayout = () => {
   const [collapsed, setCollapsed] = useState(false);
   const [selectedMenu, setSelectedMenu] = useState(1);
+  const navigate = useNavigate()
 
   const menus = [
     {
@@ -22,6 +24,7 @@ const MyLayout = () => {
           iconName={<IoHome color={selectedMenu === 1 ? "white" : "#6F80A0"} />}
         />
       ),
+      href:'/dashboard'
     },
     {
       key: 2,
@@ -35,6 +38,7 @@ const MyLayout = () => {
           }
         />
       ),
+      href:'./member-management'
     },
   ];
 
@@ -80,9 +84,11 @@ const MyLayout = () => {
             }}
             items={menus}
             onClick={(item) => {
-              console.log(item.key);
               setSelectedMenu(+item.key);
+              const route = menus.find(menu => menu.key === +item.key)?.href
+              navigate(route!)
             }}
+            
           />
         )}
       </Sider>
@@ -114,7 +120,7 @@ const MyLayout = () => {
             minHeight: "calc(100vh - 90px)",
           }}
         >
-          Content
+          <Outlet/>
         </Content>
       </Layout>
     </Layout>
