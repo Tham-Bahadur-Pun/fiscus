@@ -1,0 +1,7 @@
+.container:hover {
+    cursor: pointer;
+}
+
+.container.selectedHover:hover {
+    background-color: #414F66 !important;
+}
