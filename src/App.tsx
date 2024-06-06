@@ -7,6 +7,7 @@ import { AuthContext, AuthProvider } from "./context/AuthContext";
 import MyLayout from "./MyLayout";
 import Home from "./pages/Home";
 import MemberManagement from "./pages/MemberManagement";
+import MemberManagementDetail from "./pages/MemberManagementDetail"
 import { SignIn } from "./pages/SignIn";
 import locale from "antd/locale/ko_KR";
 import dayjs from "dayjs";
@@ -42,7 +43,7 @@ function App() {
               itemSelectedBg: "#fff",
               itemActiveBg: "#fff",
               iconMarginInlineEnd: 12,
-              itemHeight: 54,
+              itemHeight: 38,
               colorIcon: "#6F80A0",
             },
             Button: {
@@ -71,6 +72,9 @@ function App() {
             },
             Pagination: {
               itemBg: "EEF0F4",
+            },
+            Tabs: {
+              itemSelectedColor: '#fff'
             }
           },
         }}
@@ -80,6 +84,7 @@ function App() {
           <Route path="dashboard" element={<MyLayout />}>
             <Route index element={<Home />} />
             <Route path="member-management" element={<MemberManagement />} />
+            <Route path="member-management/detail" element={<MemberManagementDetail />} />
           </Route>
         </Routes>
       </ConfigProvider>

@@ -14,6 +14,8 @@ import {
   TableColumnsType,
 } from "antd";
 import ApprovalStatus from "../components/ApprovalStatus";
+import { Link } from "react-router-dom";
+import './MemeberManagement.css'
 interface DataType {
   NO: React.Key;
   회원번호: string;
@@ -273,10 +275,12 @@ const MemberManagement = () => {
     {
       title: "회원번호",
       dataIndex: "회원번호",
+      render: (text) => <Link to="./detail" className="link" style={{color: 'black'}}>{text}</Link>,
     },
     {
       title: "회원명/법인명",
       dataIndex: "회원명/법인명",
+      render: (text) => <Link to="./detail" className="link" style={{color: 'black'}}>{text}</Link>,
     },
     {
       title: "휴대폰 번호",

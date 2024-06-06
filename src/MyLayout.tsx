@@ -28,7 +28,7 @@ const MyLayout = () => {
     },
     {
       key: 2,
-      label: "대시",
+      label: "회원 관리",
       icon: (
         <Icon
           itemKey={2}
@@ -148,18 +148,6 @@ const MyLayout = () => {
       ),
       href: '/support'
   },
-  {
-      key: 12,
-      label: "시스템 관리",
-      icon: (
-          <Icon
-              itemKey={12}
-              selectedMenu={selectedMenu}
-              iconName={<IoLogOut color={selectedMenu === 12 ? "white" : "#6F80A0"} />}
-          />
-      ),
-      href: '/logout'
-  }
   ];
 
   const {

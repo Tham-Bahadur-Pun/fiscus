@@ -27,3 +27,7 @@ body {
 ::marker {
   font-size: 20px;
 }
+
+.ant-tabs-tab-active {
+  background-color: #2a3958 !important;
+}
