@@ -1,12 +1,11 @@
-import { Radio, Tabs, TabsProps } from "antd";
+import { Radio } from "antd";
 import { RadioChangeEvent } from "antd/lib";
-import React, { useState } from "react";
-import { useParams } from "react-router";
-import InformationManagement from "./tabs/InformationManagement";
-import InvestmentTypeManagement from "./tabs/InvestmentTypeManagement";
+import { useState } from "react";
 import CheckDetails from "./tabs/CheckDetails";
-import InvestmentDetailInquiry from "./tabs/InvestmentDetailInquiry";
+import InformationManagement from "./tabs/InformationManagement";
 import InquiryHistory from "./tabs/InquiryHistory";
+import InvestmentDetailInquiry from "./tabs/InvestmentDetailInquiry";
+import InvestmentTypeManagement from "./tabs/InvestmentTypeManagement";
 
 const Detail = () => {
   const tabItems = [
@@ -48,27 +47,28 @@ const Detail = () => {
     },
   ];
 
-  const params = useParams()
 
   const [selectedTab, setSelectedTab] = useState('기본정보 관리')
-  // const onChange = ()
   const onChange = ({ target: { value } }: RadioChangeEvent) => {
-    console.log('radio1 checked', value);
-    // params.
-    setSelectedTab(value);
+      setSelectedTab(value);
   };
 
   return (
     <div>
-      <h1 style={{ fontSize: "1.5rem", marginBottom: "1em" }}>회원상세</h1>
-      <Radio.Group
-        options={tabItems}
-        onChange={onChange}
-        value={selectedTab}
-        optionType="button"
-        buttonStyle="solid"
-        size="large"
-      />
+      <h1 style={{ fontSize: "1.5rem", marginBottom: "0.5em" }}>회원상세</h1>
+      <div style={{ height: "1px", background: "#EEF0F4",  marginBottom: "1em"  }}></div>
+
+      <div style={{ marginBottom: '42px', flexGrow: 1}}>
+        <Radio.Group
+          options={tabItems}
+          onChange={onChange}
+          value={selectedTab}
+          optionType="button"
+          buttonStyle="solid"
+          size="large"
+          style={{flexGrow: 1}}
+        />
+      </div>
       {selectedTab === '기본정보 관리' && <InformationManagement />}
       {selectedTab === '투자유형 관리' && <InvestmentTypeManagement />}
       {selectedTab === '입출금내역 조회' && <CheckDetails />}

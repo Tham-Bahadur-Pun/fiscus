@@ -57,7 +57,7 @@ function App() {
             },
             Radio: {
               wrapperMarginInlineEnd: 50,
-              buttonPaddingInline: 6,
+              buttonPaddingInline: 22,
             },
             Select: {
               optionHeight: 40,

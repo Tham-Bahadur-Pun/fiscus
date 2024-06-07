@@ -4,19 +4,27 @@ const CheckDetails = () => {
   return (
     <div>
       <h5>계좌정보</h5>
-      <div style={{ border: "1px solid #d7d8da" }}>
+      <div style={{ border: "1px solid #d7d8da", marginBottom: '47px' }}>
         <Row>
           <Col
             span={4}
             style={{
-              backgroundColor: "#EEF0F4",
-              padding: "12px",
-              borderBottomColor: "#fff",
+              display: "flex",
+              paddingLeft: "1em",
+              alignItems: "center",
+              height: "50px",
+              background: "#EEF0F4",
+              borderBottom: "1px solid #fff",
             }}
           >
             <span>출금계좌</span>
           </Col>
-          <Col style={{ padding: "12px", borderColor: "#eef0f4" }}>
+          <Col style={{
+              display: "flex",
+              alignItems: "center",
+              paddingLeft: "1.4em",
+              height: "50px",
+            }}>
             <span>신한은행 123-45-678-90</span>
           </Col>
         </Row>
@@ -24,14 +32,22 @@ const CheckDetails = () => {
           <Col
             span={4}
             style={{
-              backgroundColor: "#EEF0F4",
-              padding: "12px",
-              borderBottomColor: "#fff",
+              display: "flex",
+              paddingLeft: "1em",
+              alignItems: "center",
+              height: "50px",
+              background: "#EEF0F4",
+              borderBottom: "1px solid #fff",
             }}
           >
             <span>예치금계좌</span>
           </Col>
-          <Col style={{ padding: "12px", borderColor: "#eef0f4" }}>
+          <Col style={{
+              display: "flex",
+              alignItems: "center",
+              paddingLeft: "1.4em",
+              height: "50px",
+            }}>
             <span>전북은행 012-33-22221</span>
           </Col>
         </Row>
@@ -39,14 +55,22 @@ const CheckDetails = () => {
           <Col
             span={4}
             style={{
-              backgroundColor: "#EEF0F4",
-              padding: "12px",
-              borderBottomColor: "#fff",
+              display: "flex",
+              paddingLeft: "1em",
+              alignItems: "center",
+              height: "50px",
+              background: "#EEF0F4",
+              borderBottom: "1px solid #fff",
             }}
           >
             <span>투자자잔액</span>
           </Col>
-          <Col style={{ padding: "12px", borderColor: "#eef0f4" }}>
+          <Col style={{
+              display: "flex",
+              alignItems: "center",
+              paddingLeft: "1.4em",
+              height: "50px",
+            }}>
             <span>10,000,000원</span>
           </Col>
         </Row>
@@ -54,22 +78,42 @@ const CheckDetails = () => {
           <Col
             span={4}
             style={{
-              backgroundColor: "#EEF0F4",
-              padding: "12px",
-              borderBottomColor: "#fff",
+              display: "flex",
+              paddingLeft: "1em",
+              alignItems: "center",
+              height: "50px",
+              background: "#EEF0F4",
+              borderBottom: "1px solid #fff",
             }}
           >
             <span>차입자잔액</span>
           </Col>
-          <Col style={{ padding: "12px", borderColor: "#eef0f4" }}>
+          <Col style={{
+              display: "flex",
+              alignItems: "center",
+              paddingLeft: "1.4em",
+              height: "50px",
+            }}>
             <span>10,000,000원</span>
           </Col>
         </Row>
         <Row>
-          <Col span={4} style={{ backgroundColor: "#EEF0F4", padding: "12px" }}>
+          <Col span={4}  style={{
+              display: "flex",
+              paddingLeft: "1em",
+              alignItems: "center",
+              height: "50px",
+              background: "#EEF0F4",
+              borderBottom: "1px solid #fff",
+            }}>
             <span>상환전용계좌</span>
           </Col>
-          <Col style={{ padding: "12px" }}>
+          <Col style={{
+              display: "flex",
+              alignItems: "center",
+              paddingLeft: "1.4em",
+              height: "50px",
+            }}>
             <Button size="large" type="primary">
               자세히 보기
             </Button>
@@ -142,12 +186,12 @@ const DepositWithdrawList = () => {
 
   return (
     <div>
-      <Flex justify="space-between">
-        <div>
+      <Flex justify="space-between" style={{marginBottom: '12px'}}>
+        <Flex gap={10}>
           <h5>입출금 목록</h5>
-          <span>(총 100건)</span>
-        </div>
-        <div>
+          <span style={{marginTop:'0.5em'}}>(총 100건)</span>
+        </Flex>
+        <Flex gap={8}>
           <Select
             options={[{ value: "2023", label: "2023" }]}
             size="large"
@@ -173,7 +217,7 @@ const DepositWithdrawList = () => {
             dropdownStyle={{ padding: 0 }}
           />
           <Button size="large">엑셀 다운로드</Button>
-        </div>
+        </Flex>
       </Flex>
       <Table
         columns={columns}
