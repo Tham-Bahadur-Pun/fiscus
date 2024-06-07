@@ -23,3 +23,16 @@ body {
   padding-block: 12px;
   margin-bottom: 20px !important;
 }
+
+
+.ant-tabs-tab-active {
+  background-color: #2a3958 !important;
+}
+
+h5 {
+  margin-bottom: 0.5em;
+  color: rgba(0, 0, 0, 0.88);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+}
