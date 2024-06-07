@@ -1,6 +1,9 @@
 import { Radio, Tabs, TabsProps } from "antd";
 import { RadioChangeEvent } from "antd/lib";
 import React, { useState } from "react";
+import { useParams } from "react-router";
+import InformationManagement from "./tabs/InformationManagement";
+import InvestmentTypeManagement from "./tabs/InvestmentTypeManagement";
 
 const Detail = () => {
   const tabItems = [
@@ -42,22 +45,19 @@ const Detail = () => {
     },
   ];
 
-  const [selectedTab, setSelectedTab] = useState()
+  const params = useParams()
+
+  const [selectedTab, setSelectedTab] = useState('기본정보 관리')
   // const onChange = ()
   const onChange = ({ target: { value } }: RadioChangeEvent) => {
     console.log('radio1 checked', value);
+    // params.
     setSelectedTab(value);
   };
 
   return (
     <div>
       <h1 style={{ fontSize: "1.5rem", marginBottom: "1em" }}>회원상세</h1>
-      {/* <Tabs
-        defaultActiveKey="1"
-        items={items}
-        size="large"
-        tabBarStyle={{ background: "#F5F5F5", borderRadius: "10px"}}
-      /> */}
       <Radio.Group
         options={tabItems}
         onChange={onChange}
@@ -65,6 +65,10 @@ const Detail = () => {
         optionType="button"
         buttonStyle="solid"
       />
+      {selectedTab === '기본정보 관리' && <InformationManagement />}
+      {selectedTab === '투자유형 관리' && <InvestmentTypeManagement />}
+      {/* {selectedTab === '입출금내역 조회' && < />} */}
+      
     </div>
   );
 };
