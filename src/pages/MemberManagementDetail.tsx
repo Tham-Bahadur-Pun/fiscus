@@ -4,6 +4,9 @@ import React, { useState } from "react";
 import { useParams } from "react-router";
 import InformationManagement from "./tabs/InformationManagement";
 import InvestmentTypeManagement from "./tabs/InvestmentTypeManagement";
+import CheckDetails from "./tabs/CheckDetails";
+import InvestmentDetailInquiry from "./tabs/InvestmentDetailInquiry";
+import InquiryHistory from "./tabs/InquiryHistory";
 
 const Detail = () => {
   const tabItems = [
@@ -64,10 +67,13 @@ const Detail = () => {
         value={selectedTab}
         optionType="button"
         buttonStyle="solid"
+        size="large"
       />
       {selectedTab === '기본정보 관리' && <InformationManagement />}
       {selectedTab === '투자유형 관리' && <InvestmentTypeManagement />}
-      {/* {selectedTab === '입출금내역 조회' && < />} */}
+      {selectedTab === '입출금내역 조회' && <CheckDetails />}
+      {selectedTab === '투자내역 조회' && <InvestmentDetailInquiry />}
+      {selectedTab === '1:1문의내역 조회' && <InquiryHistory />}
       
     </div>
   );
