@@ -1,5 +1,4 @@
 import { Button, Checkbox, Col, Flex, Input, Row } from "antd";
-import React from "react";
 
 const InformationManagement = () => {
   return (
@@ -94,9 +93,14 @@ const InformationManagement = () => {
               </Col>
             </Row>
           </Col>
-          <Col span={2}>
-            <Row>
+          <Col span={20}>
+            <Row
+              style={{
+                borderBottom: "1px solid #EEF0F4",
+              }}
+            >
               <Col
+                // span={20}
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -107,7 +111,11 @@ const InformationManagement = () => {
                 <span>일반개인</span>
               </Col>
             </Row>
-            <Row>
+            <Row
+              style={{
+                borderBottom: "1px solid #EEF0F4",
+              }}
+            >
               <Col
                 style={{
                   display: "flex",
@@ -178,8 +186,10 @@ const InformationManagement = () => {
               </Col>
             </Row>
           </Col>
-          <Col span={2}>
-            <Row>
+          <Col span={20}>
+            <Row  style={{
+                borderBottom: "1px solid #EEF0F4",
+              }}>
               <Col
                 style={{
                   display: "flex",
@@ -191,7 +201,9 @@ const InformationManagement = () => {
                 <span>개인</span>
               </Col>
             </Row>
-            <Row>
+            <Row  style={{
+                borderBottom: "1px solid #EEF0F4",
+              }}>
               <Col
                 style={{
                   display: "flex",
@@ -231,7 +243,9 @@ const InformationManagement = () => {
           >
             <Flex align="center" gap={10}>
               <span>승인거부</span>
-              <Button size="large" type="primary">사유 확인 </Button>
+              <Button size="large" type="primary" className="btn-sec">
+                사유 확인{" "}
+              </Button>
             </Flex>
           </Col>
         </Row>
@@ -260,7 +274,9 @@ const InformationManagement = () => {
           >
             <Flex align="center" gap={10}>
               <span>휴면 (2023-01-01 09:00:00)</span>
-              <Button size="large" type="primary">휴면 해제 </Button>
+              <Button size="large" type="primary" className="btn-sec">
+                휴면 해제{" "}
+              </Button>
             </Flex>
           </Col>
         </Row>
@@ -289,8 +305,12 @@ const InformationManagement = () => {
           >
             <Flex align="center" gap={10}>
               <span>블랙리스트</span>
-              <Button size="large" type="primary">사유 확인 </Button>
-              <Button size="large" type="primary">블랙리스트 해제 </Button>
+              <Button size="large" type="primary" className="btn-sec">
+                사유 확인{" "}
+              </Button>
+              <Button size="large" type="primary" className="btn-sec">
+                블랙리스트 해제{" "}
+              </Button>
             </Flex>
           </Col>
         </Row>
@@ -319,7 +339,9 @@ const InformationManagement = () => {
           >
             <Flex align="center" gap={10}>
               <span>김길동</span>
-              <Button size="large" type="primary">변경 이력 확인 </Button>
+              <Button size="large" type="primary" className="btn-sec">
+                변경 이력 확인{" "}
+              </Button>
             </Flex>
           </Col>
         </Row>
@@ -483,7 +505,9 @@ const InformationManagement = () => {
               justify="space-between"
               style={{ width: "100%" }}
             >
-              <Button size="large">주소검색</Button>
+              <Button size="large" type="primary" className="btn-sec">
+                주소검색
+              </Button>
               <Input
                 value="(01234) 서울특별시 강동구 천호대로 12길"
                 disabled
@@ -593,7 +617,9 @@ const InformationManagement = () => {
               height: "50px",
             }}
           >
-            <Button size="large">자세히 보기</Button>
+            <Button size="large" type="primary" className="btn-sec">
+              자세히 보기
+            </Button>
           </Col>
         </Row>
 
@@ -622,7 +648,9 @@ const InformationManagement = () => {
             <Flex align="center">
               <Checkbox>이메일</Checkbox>
               <Checkbox>문자</Checkbox>
-              <Button size="large">동의 이력 확인</Button>
+              <Button size="large" type="primary" className="btn-sec">
+                동의 이력 확인
+              </Button>
             </Flex>
           </Col>
         </Row>
@@ -651,7 +679,9 @@ const InformationManagement = () => {
           >
             <Flex gap={10} align="center">
               <span>전체 약관동의 완료</span>
-              <Button size="large" type="primary">동의 이력 확인</Button>
+              <Button size="large" type="primary" className="btn-sec">
+                동의 이력 확인
+              </Button>
             </Flex>
           </Col>
         </Row>
@@ -847,7 +877,9 @@ const Memo = () => {
             }}
           >
             <Flex gap={10} align="center">
-              <Button size="large">주소검색</Button>
+              <Button size="large" type="primary" className="btn-sec">
+                주소검색
+              </Button>
               <Input value="서울특별시 강동구 천호대로 12길" disabled />
               <Input value="상세주소" />
             </Flex>
