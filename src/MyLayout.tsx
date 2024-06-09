@@ -1,10 +1,10 @@
 import { Button, Layout, Menu, theme } from "antd";
 import { useState } from "react";
-import { IoAnalytics, IoClipboard, IoHelpCircle, IoHome, IoLogOut, IoMail, IoNotifications, IoPerson, IoPulse, IoSettings } from "react-icons/io5";
+import { IoAnalytics, IoClipboard, IoHelpCircle, IoHome, IoMail, IoNotifications, IoPerson, IoPulse, IoSettings } from "react-icons/io5";
 import { MdBusinessCenter, MdOutlineKeyboardArrowRight, MdPerson } from "react-icons/md";
+import { Outlet, useNavigate } from "react-router";
 import Header from "./components/Header";
 import Icon from "./components/Icon";
-import { Outlet, useNavigate } from "react-router";
 
 const { Sider, Content } = Layout;
 
@@ -164,7 +164,7 @@ const MyLayout = () => {
           position: "fixed",
           height: "100vh",
           borderRight: "1px solid #E5E7EB",
-          zIndex: 1, 
+          zIndex: 2, 
         }}
         theme="light"
         collapsedWidth={40}
@@ -207,7 +207,7 @@ const MyLayout = () => {
             top: 0,
             left: 0,
             right: 0,
-            zIndex: !collapsed ? 2 : 0, // Ensure the header is above the sidebar
+            zIndex: !collapsed ? 3 : 1, // Ensure the header is above the sidebar
             height: 90,
             background: "#fff",
             borderBottom: "1px solid #E5E7EB",

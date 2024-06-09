@@ -546,6 +546,7 @@ const Home = () => {
             dataSource={data}
             pagination={{ position: ["bottomCenter"] }}
             rowKey={(data)=> data.NO}
+            rowClassName='tableRow'
           />
         </div>
       </div>

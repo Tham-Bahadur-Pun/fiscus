@@ -440,9 +440,11 @@ const InquiryHistory = () => {
           ...rowSelection,
         }}
         dataSource={data}
-        pagination={{ position: ["bottomCenter"] }}
+        pagination={{ position: ["bottomCenter"], pageSize: 50, }}
         rowKey={(data) => data.NO}
         scroll={{ x: 1000 }}
+        bordered
+        rowClassName='tableRow'
       />
     </div>
   );

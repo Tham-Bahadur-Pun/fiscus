@@ -68,10 +68,12 @@ function App() {
             },
             Table: {
               headerBg: "#EEF0F4",
-              footerBg: "#EEF0F4",
+              borderColor: "#fff",
+              stickyScrollBarBg: "#63728F",
+              stickyScrollBarBorderRadius: 200
             },
             Pagination: {
-              itemBg: "EEF0F4",
+              itemBg: "#F1F3F5",
             },
             Tabs: {
               itemSelectedColor: '#fff'

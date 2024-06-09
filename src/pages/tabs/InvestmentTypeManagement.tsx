@@ -383,6 +383,7 @@ const InvestmentTypeManagement = () => {
             pagination={{ position: ["bottomCenter"] }}
             rowKey={(data) => data.NO}
             scroll={{ x: 1300 }}
+            rowClassName='tableRow'
           />
         </div>
       </div>

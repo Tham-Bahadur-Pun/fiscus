@@ -73,8 +73,7 @@ const Detail = () => {
       {selectedTab === '투자유형 관리' && <InvestmentTypeManagement />}
       {selectedTab === '입출금내역 조회' && <CheckDetails />}
       {selectedTab === '투자내역 조회' && <InvestmentDetailInquiry />}
-      {selectedTab === '1:1문의내역 조회' && <InquiryHistory />}
-      
+      {selectedTab === '1:1문의내역 조회' && <InquiryHistory />}      
     </div>
   );
 };

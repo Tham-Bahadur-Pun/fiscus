@@ -933,9 +933,10 @@ const MemberManagement = () => {
             }}
             columns={columns}
             dataSource={data}
-            pagination={{ position: ["bottomCenter"] }}
+            pagination={{ position: ["bottomCenter"], pageSize: 20, }}
             scroll={{ x: 1700 }}
             rowKey={(data) => data.NO}
+            rowClassName='tableRow'
           />
         </div>
       </div>

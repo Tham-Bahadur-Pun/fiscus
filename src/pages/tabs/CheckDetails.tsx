@@ -19,11 +19,12 @@ const CheckDetails = () => {
           >
             <span>출금계좌</span>
           </Col>
-          <Col style={{
+          <Col span={20} style={{
               display: "flex",
               alignItems: "center",
               paddingLeft: "1.4em",
               height: "50px",
+              borderBottom: "1px solid #EEF0F4",
             }}>
             <span>신한은행 123-45-678-90</span>
           </Col>
@@ -42,11 +43,12 @@ const CheckDetails = () => {
           >
             <span>예치금계좌</span>
           </Col>
-          <Col style={{
+          <Col span={20} style={{
               display: "flex",
               alignItems: "center",
               paddingLeft: "1.4em",
               height: "50px",
+              borderBottom: "1px solid #EEF0F4",
             }}>
             <span>전북은행 012-33-22221</span>
           </Col>
@@ -65,11 +67,12 @@ const CheckDetails = () => {
           >
             <span>투자자잔액</span>
           </Col>
-          <Col style={{
+          <Col span={20} style={{
               display: "flex",
               alignItems: "center",
               paddingLeft: "1.4em",
               height: "50px",
+              borderBottom: "1px solid #EEF0F4",
             }}>
             <span>10,000,000원</span>
           </Col>
@@ -88,11 +91,13 @@ const CheckDetails = () => {
           >
             <span>차입자잔액</span>
           </Col>
-          <Col style={{
+          <Col span={20} style={{
               display: "flex",
               alignItems: "center",
               paddingLeft: "1.4em",
               height: "50px",
+              borderBottom: "1px solid #EEF0F4",
+
             }}>
             <span>10,000,000원</span>
           </Col>
@@ -108,13 +113,14 @@ const CheckDetails = () => {
             }}>
             <span>상환전용계좌</span>
           </Col>
-          <Col style={{
+          <Col span={20} style={{
               display: "flex",
               alignItems: "center",
               paddingLeft: "1.4em",
               height: "50px",
+              borderBottom: "1px solid #EEF0F4",
             }}>
-            <Button size="large" type="primary">
+            <Button size="large" type="primary" className="btn-sec">
               자세히 보기
             </Button>
           </Col>
@@ -199,24 +205,37 @@ const DepositWithdrawList = () => {
             dropdownStyle={{ padding: 0 }}
           />
           <Select
-            options={[{ value: "2023", label: "2023" }]}
+            options={[{ value: "입출금 전체", label: "입출금 전체" },
+              { value: "입금", label: "입금" },
+              { value: "출금", label: "출금" }
+            ]}
             size="large"
-            value="2024"
+            value="입출금 전체"
             dropdownStyle={{ padding: 0 }}
           />
           <Select
-            options={[{ value: "2023", label: "2023" }]}
+            options={[
+              { value: "거래일시순", label: "거래일시순" },
+              { value: "입금액높은순", label: "입금액높은순" },
+              { value: "입금액낮은순", label: "입금액낮은순" },
+              { value: "출금액높은순", label: "출금액높은순" },
+              { value: "출금액낮은순", label: "출금액낮은순" },
+            ]}
             size="large"
-            value="2024"
+            value="거래일시순"
             dropdownStyle={{ padding: 0 }}
           />
           <Select
-            options={[{ value: "2023", label: "2023" }]}
-            size="large"
-            value="2024"
-            dropdownStyle={{ padding: 0 }}
-          />
-          <Button size="large">엑셀 다운로드</Button>
+              defaultValue="50개씩 보기"
+              options={[
+                { value: "50개씩 보기", label: "50개씩 보기" },
+                { value: "100개씩 보기", label: "100개씩 보기" },
+                { value: "200개씩 보기", label: "200개씩 보기" },
+              ]}
+              size="large"
+              dropdownStyle={{ padding: 0 }}
+            />
+          <Button size="large" style={{ background: "#EBEEF3" }}>엑셀 다운로드</Button>
         </Flex>
       </Flex>
       <Table
@@ -231,6 +250,9 @@ const DepositWithdrawList = () => {
             </li>
           </ul>
         )}
+        pagination={{ position: ["bottomCenter"] }}
+        bordered
+        rowClassName='tableRow'
       />
     </div>
   );
