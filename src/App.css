@@ -1,0 +1,107 @@
+/* Home.css */
+
+  
+  .header {
+    font-size: 1.5rem;
+    margin-bottom: 1em;
+  }
+  
+  .formContainer {
+    background: #F4F5F6;
+    padding: 12px 20px;
+    border-radius: 10px;
+  }
+  
+  .formRow {
+    margin-bottom: 0.8em;
+  }
+  
+  .label {
+    font-size: 1rem;
+  }
+  
+  .searchContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+    width: 100%;
+  }
+  
+  .searchButton {
+    height: 53px;
+    width: 160px;
+  }
+  
+  .resetButton {
+    width: 100px;
+    height: 40px;
+  }
+  
+  .tableContainer {
+    margin-top: 30px;
+  }
+  
+  .tableHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  
+  .tableTitle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .tableTitleText {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  .tableTitleCount {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .tableHeaderRight {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .excelButton {
+    width: 100px;
+    height: 40px;
+  }
+  
+  .tableDivider {
+    height: 1px;
+    background: #EEF0F4;
+  }
+  
+  .tableFooter {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 6px;
+    margin-bottom: 8px;
+  }
+  
+  .tableFooterActions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .saveButton {
+    width: 100px;
+    height: 40px;
+  }
+  
+  .tableRow {
+    /* Customize table row styles if needed */
+  }
+
+  .ant-menu-item {
+    padding: 26px !important;
+    margin-bottom: 0px !important
+  }

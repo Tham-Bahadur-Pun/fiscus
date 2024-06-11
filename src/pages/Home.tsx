@@ -247,127 +247,22 @@ const Home = () => {
   };
 
   return (
-    <div>
-      <h1 style={{ fontSize: "1.5rem", marginBottom: "1em" }}>회원 관리</h1>
-      <div
-        style={{
-          background: "#F4F5F6",
-          paddingBlock: "12px",
-          paddingLeft: "20px",
-          borderRadius: "10px",
-        }}
-      >
-        {/* <form action="">
-          <ul style={{ marginLeft: "15px" }}>
-            <li style={{ marginBottom: "3px" }}>
-              <div
-                style={{ display: "flex", alignItems: "center", gap: "2px" }}
-              >
-                <span style={{ marginRight: "2em", fontSize: "1rem" }}>
-                  가입일
-                </span>
-                <ToggleButton items={joinDates} />
-                <RangePicker
-                  size="large"
-                  style={{ fontWeight: 600, fontSize: "1rem", width: "50%" }}
-                />
-              </div>
-            </li>
-            <div
-              style={{
-                display: "flex",
-                marginBottom: "3px",
-                justifyContent: "space-between",
-                width: "80%",
-              }}
-            >
-              <li>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    paddingLeft: "10px",
-                    gap: "2px",
-                  }}
-                >
-                  <span style={{ marginRight: "2em", fontSize: "1rem" }}>
-                    채널
-                  </span>
-                  <Checkbox.Group options={channel} />
-                </div>
-              </li>
-              <li>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    paddingLeft: "10px",
-                    gap: "2px",
-                  }}
-                >
-                  <span style={{ marginRight: "2em", fontSize: "1rem" }}>
-                    채널
-                  </span>
-                  <Checkbox.Group options={channel2} />
-                </div>
-              </li>
-            </div>
-            <li>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  paddingLeft: "10px",
-                  gap: "2px",
-                }}
-              >
-                <span style={{ marginRight: "2em", fontSize: "1rem" }}>
-                  게시여부
-                </span>
-                <Checkbox.Group options={posting}></Checkbox.Group>
-              </div>
-            </li>
-            <li>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  paddingLeft: "10px",
-                  gap: "2px",
-                }}
-              >
-                <span style={{ marginRight: "2em", fontSize: "1rem" }}>
-                  검색
-                </span>
-                <Select
-                  style={{ width: 120 }}
-                  options={[{ value: "회원명", label: "회원명" }]}
-                  size="large"
-                  dropdownStyle={{ padding: 0 }}
-                />
-                <Input
-                  placeholder="검색어를 입력해주세요."
-                  style={{ width: "83%" }}
-                />
-              </div>
-            </li>
-          </ul>
-        </form> */}
+    <div className="container">
+      <h1 className="header">회원 관리</h1>
+      <div className="formContainer">
         <form action="">
-          {/* <div style={layoutStyle}> */}
-          {/* 1 */}
-          <Row gutter={[3, 3]} align="middle" style={{marginBottom: '0.8em'}}>
+          <Row gutter={[3, 3]} align="middle" className="formRow">
             <Col
               span={2}
               style={{ display: "flex", alignItems: "center", gap: "10px" }}
             >
               <Dot />
-              <span style={labelStyle}>가입일</span>
+              <span className="label">가입일</span>
             </Col>
             <Col>
               <ToggleButton items={joinDates} />
             </Col>
-            <Col>
+            <Col span={12}>
               <RangePicker
                 size="large"
                 style={{ fontWeight: 600, fontSize: "1rem", width: "100%" }}
@@ -375,20 +270,15 @@ const Home = () => {
             </Col>
           </Row>
 
-          {/* 2 */}
-          <Row gutter={[3,3]} align="middle" style={{marginBottom: '0.8em'}}>
+          <Row gutter={[3, 3]} align="middle" className="formRow">
             <Col span={12}>
               <Row align="middle">
                 <Col
                   span={4}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "10px",
-                  }}
+                  style={{ display: "flex", alignItems: "center", gap: "10px" }}
                 >
                   <Dot />
-                  <span style={labelStyle}>채널</span>
+                  <span className="label">채널</span>
                 </Col>
                 <Col span={18}>
                   <Checkbox.Group options={channel} />
@@ -399,14 +289,10 @@ const Home = () => {
               <Row align="middle">
                 <Col
                   span={4}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "10px",
-                  }}
+                  style={{ display: "flex", alignItems: "center", gap: "10px" }}
                 >
                   <Dot />
-                  <span style={labelStyle}>채널</span>
+                  <span className="label">채널</span>
                 </Col>
                 <Col span={18}>
                   <Checkbox.Group options={channel2} />
@@ -415,20 +301,15 @@ const Home = () => {
             </Col>
           </Row>
 
-          {/* 3 */}
-          <Row gutter={[3,3]} align="middle" style={{marginBottom: '0.8em'}}>
+          <Row gutter={[3, 3]} align="middle" className="formRow">
             <Col span={12}>
               <Row align="middle">
                 <Col
                   span={4}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "10px",
-                  }}
+                  style={{ display: "flex", alignItems: "center", gap: "10px" }}
                 >
                   <Dot />
-                  <span style={labelStyle}>게시여부</span>
+                  <span className="label">게시여부</span>
                 </Col>
                 <Col span={18}>
                   <Checkbox.Group options={posting} />
@@ -437,14 +318,13 @@ const Home = () => {
             </Col>
           </Row>
 
-          {/* 4 */}
-          <Row gutter={[3,3]} align="middle">
+          <Row gutter={[3, 3]} align="middle">
             <Col
               span={2}
               style={{ display: "flex", alignItems: "center", gap: "10px" }}
             >
               <Dot />
-              <span style={labelStyle}>검색</span>
+              <span className="label">검색</span>
             </Col>
             <Col span={4}>
               <Select
@@ -461,42 +341,27 @@ const Home = () => {
               />
             </Col>
           </Row>
-          {/* </div> */}
         </form>
       </div>
 
-      <Flex
-        align="center"
-        justify="space-between"
-        style={{ marginTop: "1em", width: "100%" }}
-      >
+      <Flex align="center" justify="space-between" className="searchContainer">
         <div style={{ display: "flex", justifyContent: "center", flexGrow: 1 }}>
-          <Button
-            style={{ height: "53px", width: "160px" }}
-            type="primary"
-            size="large"
-          >
+          <Button className="searchButton" type="primary" size="large">
             검색
           </Button>
         </div>
-        <Button style={{ width: "100px", height: "40px" }}>초기화</Button>
+        <Button className="resetButton">초기화</Button>
       </Flex>
 
-      <div style={{ marginTop: "30px" }}>
-        <Flex
-          justify="space-between"
-          align="center"
-          style={{ marginBottom: "12px" }}
-        >
-          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-            <span style={{ fontSize: "20px", fontWeight: "600" }}>
-              회원 목록
-            </span>
-            <span style={{ fontSize: "14px", fontWeight: "500" }}>
+      <div className="tableContainer">
+        <Flex justify="space-between" align="center" className="tableHeader">
+          <div className="tableTitle">
+            <span className="tableTitleText">회원 목록</span>
+            <span className="tableTitleCount">
               (총 100명 | 승인대기 <span style={{ color: "red" }}>10</span>명)
             </span>
           </div>
-          <div style={{ display: "flex", gap: "10px" }}>
+          <div className="tableHeaderRight">
             <Select
               defaultValue="가입일시순"
               style={{ width: 120 }}
@@ -511,17 +376,14 @@ const Home = () => {
               size="large"
               dropdownStyle={{ padding: 0 }}
             />
-            <Button style={{ width: "100px", height: "40px" }} disabled>
+            <Button className="excelButton" disabled>
               엑셀 다운로드
             </Button>
           </div>
         </Flex>
-        <div style={{ height: "1px", background: "#EEF0F4" }}></div>
-        <Flex
-          justify="flex-end"
-          style={{ marginTop: "6px", marginBottom: "8px" }}
-        >
-          <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+        <div className="tableDivider"></div>
+        <Flex justify="flex-end" className="tableFooter">
+          <div className="tableFooterActions">
             <span>선택한 0명 회원</span>
             <Select
               style={{ width: 120 }}
@@ -530,25 +392,20 @@ const Home = () => {
               size="large"
               dropdownStyle={{ padding: 0 }}
             />
-            <Button style={{ width: "100px", height: "40px" }} type="primary">
+            <Button className="saveButton" type="primary">
               저장
             </Button>
           </div>
         </Flex>
-        <div>
-          <Table
-            size="large"
-            rowSelection={{
-              type: "checkbox",
-              ...rowSelection,
-            }}
-            columns={columns}
-            dataSource={data}
-            pagination={{ position: ["bottomCenter"] }}
-            rowKey={(data)=> data.NO}
-            rowClassName='tableRow'
-          />
-        </div>
+        <Table
+          size="large"
+          rowSelection={{ type: "checkbox", ...rowSelection }}
+          columns={columns}
+          dataSource={data}
+          pagination={{ position: ["bottomCenter"] }}
+          rowKey={(data) => data.NO}
+          rowClassName="tableRow"
+        />
       </div>
     </div>
   );

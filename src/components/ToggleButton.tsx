@@ -13,7 +13,7 @@ const ToggleButton = ({
       {items.map((item) => (
         <div
           key={item.value}
-          className={`container ${
+          className={`tg-container ${
             item.value === selected ? "selectedHover" : ""
           }`}
           style={{
@@ -30,7 +30,7 @@ const ToggleButton = ({
           }}
           onClick={() => setSelected(item.value)}
         >
-          <span style={{ fontSize: "1rem" }}>{item.label}</span>
+          <span style={{ fontSize: "1rem", textWrap:"nowrap" }}>{item.label}</span>
         </div>
       ))}
     </div>

@@ -188,7 +188,7 @@ const MyLayout = () => {
               top: 90,
               fontWeight: 900,
               fontSize: "1rem",
-              padding: "20px 10px 0px 22px",
+              padding: "20px 10px 0px 12px",
             }}
             items={menus}
             onClick={(item) => {

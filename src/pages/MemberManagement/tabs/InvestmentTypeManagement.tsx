@@ -1,5 +1,5 @@
 import { Button, Flex, Select, Table, TableColumnsType } from "antd";
-import ApprovalStatus from "../../components/ApprovalStatus";
+import ApprovalStatus from "../../../components/ApprovalStatus";
 
 interface DataType {
   NO: React.Key;
