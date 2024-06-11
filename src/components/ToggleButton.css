@@ -1,7 +1,7 @@
-.container:hover {
+.tg-container:hover {
     cursor: pointer;
 }
 
-.container.selectedHover:hover {
+.tg-container.selectedHover:hover {
     background-color: #414F66 !important;
 }

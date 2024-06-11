@@ -1,6 +1,3 @@
-import { useEffect } from "react";
-import Dot from "../components/Dot";
-import ToggleButton from "../components/ToggleButton";
 import {
   Button,
   Checkbox,
@@ -13,9 +10,13 @@ import {
   Table,
   TableColumnsType,
 } from "antd";
-import ApprovalStatus from "../components/ApprovalStatus";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import './MemeberManagement.css'
+import ApprovalStatus from "../../components/ApprovalStatus";
+import Dot from "../../components/Dot";
+import ToggleButton from "../../components/ToggleButton";
+import "./MemeberManagement.css";
+
 interface DataType {
   NO: React.Key;
   회원번호: string;
@@ -34,23 +35,15 @@ interface DataType {
   가입일시: string;
 }
 
-const layoutStyle = {
-  background: "#F4F5F6",
-  padding: "12px 20px",
-  borderRadius: "10px",
-};
+// const labelStyle = {
 
-const labelStyle = {
-  marginRight: "2em",
-  fontSize: "1rem",
-  width: "111px",
-};
+// };
 
-const searchLabelStyle = {
-  marginRight: "2em",
-  fontSize: "1rem",
-  width: "111px",
-};
+// const searchLabelStyle = {
+//   marginRight: "2em",
+//   fontSize: "1rem",
+//   width: "111px",
+// };
 
 const MemberManagement = () => {
   useEffect(() => {
@@ -228,6 +221,7 @@ const MemberManagement = () => {
       value: "승인거부",
     },
   ];
+
   const loanStatus = [
     {
       label: "전체",
@@ -275,12 +269,20 @@ const MemberManagement = () => {
     {
       title: "회원번호",
       dataIndex: "회원번호",
-      render: (text) => <Link to="./detail" className="link" style={{color: 'black'}}>{text}</Link>,
+      render: (text) => (
+        <Link to="./detail" className="link" style={{ color: "black" }}>
+          {text}
+        </Link>
+      ),
     },
     {
       title: "회원명/법인명",
       dataIndex: "회원명/법인명",
-      render: (text) => <Link to="./detail" className="link" style={{color: 'black'}}>{text}</Link>,
+      render: (text) => (
+        <Link to="./detail" className="link" style={{ color: "black" }}>
+          {text}
+        </Link>
+      ),
     },
     {
       title: "휴대폰 번호",
@@ -687,58 +689,285 @@ const MemberManagement = () => {
   };
 
   return (
+    // <div>
+    //   <h1 style={{ fontSize: "1.5rem", marginBottom: "1em" }}>회원 관리</h1>
+    //   <div
+    //     style={{
+    //       display: "flex",
+    //       justifyContent: "space-around",
+    //       paddingBlock: "24px",
+    //       border: "1px solid #eef0f4",
+    //       borderRadius: "10px",
+    //       marginBottom: "1em",
+    //     }}
+    //   >
+    //     {managementData.map((data, index) => (
+    //       <div
+    //         key={data.value}
+    //         style={{
+    //           borderRight:
+    //             managementData.length === index ? "" : "1px solid #eef0f4",
+    //           textAlign: "center",
+    //           width: "100%",
+    //           display: "flex",
+    //           flexDirection: "column",
+    //           justifyContent: "space-between",
+    //           paddingBlock: "24px",
+    //           gap: 10,
+    //         }}
+    //       >
+    //         <p style={{ fontSize: "1rem", fontWeight: 600 }}>{data.label}</p>
+    //         <div>
+    //           <span
+    //             style={{
+    //               fontSize: "30px",
+    //               fontWeight: 600,
+    //               textDecoration: "underline",
+    //               color: "#127cc1",
+    //             }}
+    //           >
+    //             {data.value}
+    //           </span>
+    //           명
+    //         </div>
+    //       </div>
+    //     ))}
+    //   </div>
+    //   <div style={layoutStyle}>
+    //     {/* 1 */}
+    //     <Row gutter={[3, 3]} align="middle" style={{ marginBottom: "0.8em" }}>
+    //       <Col>
+    //         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+    //           <Dot />
+    //           <span style={labelStyle}>가입일</span>
+    //         </div>
+    //       </Col>
+    //       <Col>
+    //         <ToggleButton items={joinDates} />
+    //       </Col>
+    //       <Col flex="auto">
+    //         <RangePicker
+    //           size="large"
+    //           style={{ fontWeight: 600, fontSize: "1rem", width: "100%" }}
+    //         />
+    //       </Col>
+    //     </Row>
+
+    //     {/* 2 */}
+    //     <Row gutter={[3, 3]} align="middle" style={{ marginBottom: "0.8em" }}>
+    //       <Col span={14}>
+    //         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+    //           <Dot />
+    //           <span style={labelStyle}>휴면상태</span>
+    //           <Checkbox.Group options={dormantState} />
+    //         </div>
+    //       </Col>
+    //       <Col span={10}>
+    //         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+    //           <Dot />
+    //           <span style={labelStyle}>블랙리스트 상태</span>
+    //           <Checkbox.Group options={blackListStatus} />
+    //         </div>
+    //       </Col>
+    //     </Row>
+
+    //     {/* 3 */}
+    //     <Row gutter={[3, 3]} align="middle" style={{ marginBottom: "0.8em" }}>
+    //       <Col span={14}>
+    //         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+    //           <Dot />
+    //           <span style={labelStyle}>투자자유형</span>
+    //           <Checkbox.Group options={investorType} />
+    //         </div>
+    //       </Col>
+    //       <Col span={10}>
+    //         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+    //           <Dot />
+    //           <span style={labelStyle}>투자여부</span>
+    //           <Checkbox.Group options={investmentStatus} />
+    //         </div>
+    //       </Col>
+    //     </Row>
+
+    //     {/* 4 */}
+    //     <Row gutter={[3, 3]} align="middle" style={{ marginBottom: "0.8em" }}>
+    //       <Col span={14}>
+    //         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+    //           <Dot />
+    //           <span style={labelStyle}>대출자유형</span>
+    //           <Checkbox.Group options={loanType} />
+    //         </div>
+    //       </Col>
+    //       <Col span={10}>
+    //         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+    //           <Dot />
+    //           <span style={labelStyle}>대출여부</span>
+    //           <Checkbox.Group options={loanAvailability} />
+    //         </div>
+    //       </Col>
+    //     </Row>
+
+    //     {/* 5 */}
+    //     <Row gutter={[3, 3]} align="middle" style={{ marginBottom: "0.8em" }}>
+    //       <Col>
+    //         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+    //           <Dot />
+    //           <span style={labelStyle}>투자유형승인여부</span>
+    //           <Checkbox.Group options={investmentTypeApproval} />
+    //         </div>
+    //       </Col>
+    //     </Row>
+
+    //     {/* 6 */}
+    //     <Row gutter={[3, 3]} align="middle" style={{ marginBottom: "0.8em" }}>
+    //       <Col>
+    //         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+    //           <Dot />
+    //           <span style={labelStyle}>투자/대출상태</span>
+    //           <Checkbox.Group options={loanStatus} />
+    //         </div>
+    //       </Col>
+    //     </Row>
+
+    //     {/* 7 */}
+    //     <Row gutter={[3, 3]} align="middle">
+    //       <Col span={24}>
+    //         <div
+    //           style={{
+    //             display: "flex",
+    //             alignItems: "center",
+    //             gap: "10px",
+    //             width: "100%",
+    //           }}
+    //         >
+    //           <Dot />
+    //           <span style={searchLabelStyle}>검색</span>
+    //           <Select
+    //             style={{ width: 120 }}
+    //             options={[{ value: "회원명", label: "회원명" }]}
+    //             size="large"
+    //             dropdownStyle={{ padding: 0 }}
+    //           />
+    //           <Input
+    //             placeholder="검색어를 입력해주세요."
+    //             style={{ width: "75%" }}
+    //           />
+    //         </div>
+    //       </Col>
+    //     </Row>
+    //   </div>
+    //   <Flex
+    //     align="center"
+    //     justify="space-between"
+    //     style={{ marginTop: "1em", width: "100%" }}
+    //   >
+    //     <div style={{ display: "flex", justifyContent: "center", flexGrow: 1 }}>
+    //       <Button
+    //         style={{ height: "53px", width: "160px" }}
+    //         type="primary"
+    //         size="large"
+    //       >
+    //         검색
+    //       </Button>
+    //     </div>
+    //     <Button style={{ width: "100px", height: "40px" }}>초기화</Button>
+    //   </Flex>
+    //   <div style={{ marginTop: "30px" }}>
+    //     <Flex
+    //       justify="space-between"
+    //       align="center"
+    //       style={{ marginBottom: "12px" }}
+    //     >
+    //       <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+    //         <span style={{ fontSize: "20px", fontWeight: "600" }}>
+    //           회원 목록
+    //         </span>
+    //         <span style={{ fontSize: "14px", fontWeight: "500" }}>
+    //           (총 100명 | 승인대기 <span style={{ color: "red" }}>10</span>명)
+    //         </span>
+    //       </div>
+    //       <div style={{ display: "flex", gap: "10px" }}>
+    //         <Select
+    //           defaultValue="가입일시순"
+    //           style={{ width: 120 }}
+    //           options={[{ value: "가입일시순", label: "가입일시순" }]}
+    //           size="large"
+    //           dropdownStyle={{ padding: 0 }}
+    //         />
+    //         <Select
+    //           style={{ width: 120 }}
+    //           defaultValue="50개씩 보기"
+    //           options={[{ value: "50개씩 보기", label: "50개씩 보기" }]}
+    //           size="large"
+    //           dropdownStyle={{ padding: 0 }}
+    //         />
+    //         <Button style={{ width: "100px", height: "40px" }} disabled>
+    //           엑셀 다운로드
+    //         </Button>
+    //       </div>
+    //     </Flex>
+    //     <div style={{ height: "1px", background: "#EEF0F4" }}></div>
+    //     <Flex
+    //       justify="flex-end"
+    //       style={{ marginTop: "6px", marginBottom: "8px" }}
+    //     >
+    //       <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+    //         <span>선택한 0명 회원</span>
+    //         <Select
+    //           style={{ width: 120 }}
+    //           defaultValue="승인상태 변경"
+    //           options={[{ value: "승인상태 변경", label: "승인상태 변경" }]}
+    //           size="large"
+    //           dropdownStyle={{ padding: 0 }}
+    //         />
+    //         <Button style={{ width: "100px", height: "40px" }} type="primary">
+    //           저장
+    //         </Button>
+    //       </div>
+    //     </Flex>
+    //     <div>
+    //       <Table
+    //         size="large"
+    //         rowSelection={{
+    //           type: "checkbox",
+    //           ...rowSelection,
+    //         }}
+    //         columns={columns}
+    //         dataSource={data}
+    //         pagination={{ position: ["bottomCenter"], pageSize: 20, }}
+    //         scroll={{ x: 1700 }}
+    //         rowKey={(data) => data.NO}
+    //         rowClassName='tableRow'
+    //       />
+    //     </div>
+    //   </div>
+    // </div>
     <div>
-      {" "}
-      <h1 style={{ fontSize: "1.5rem", marginBottom: "1em" }}>회원 관리</h1>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-around",
-          paddingBlock: "24px",
-          border: "1px solid #eef0f4",
-          borderRadius: "10px",
-          marginBottom: "1em",
-        }}
-      >
+      <h1 className="heading">회원 관리</h1>
+      <div className="management-section">
         {managementData.map((data, index) => (
           <div
             key={data.value}
+            className="management-item"
             style={{
               borderRight:
                 managementData.length === index ? "" : "1px solid #eef0f4",
-              textAlign: "center",
-              width: "100%",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              paddingBlock: "24px",
-              gap: 10,
             }}
           >
-            <p style={{ fontSize: "1rem", fontWeight: 600 }}>{data.label}</p>
+            <p className="management-label">{data.label}</p>
             <div>
-              <span
-                style={{
-                  fontSize: "30px",
-                  fontWeight: 600,
-                  textDecoration: "underline",
-                  color: "#127cc1",
-                }}
-              >
-                {data.value}
-              </span>
-              명
+              <span className="management-value">{data.value}</span>명
             </div>
           </div>
         ))}
       </div>
-      <div style={layoutStyle}>
-        {/* 1 */}
-        <Row gutter={[3, 3]} align="middle" style={{ marginBottom: "0.8em" }}>
-          <Col>
-            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+      <div className="layout">
+        {/* Row 1 */}
+        <Row gutter={[3, 3]} align="middle" className="row-margin">
+          <Col span={3}>
+            <div className="label">
               <Dot />
-              <span style={labelStyle}>가입일</span>
+              <span>가입일</span>
             </div>
           </Col>
           <Col>
@@ -752,95 +981,105 @@ const MemberManagement = () => {
           </Col>
         </Row>
 
-        {/* 2 */}
-        <Row gutter={[3, 3]} align="middle" style={{ marginBottom: "0.8em" }}>
-          <Col span={14}>
-            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+        {/* Row 2 */}
+        <Row gutter={[3, 3]} align="middle" className="row-margin">
+          <Col span={3}>
+            <div className="label">
               <Dot />
-              <span style={labelStyle}>휴면상태</span>
-              <Checkbox.Group options={dormantState} />
+              <span>휴면상태</span>
             </div>
           </Col>
-          <Col span={10}>
-            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <Col span={11}>
+            <Checkbox.Group options={dormantState} />
+          </Col>
+
+          <Col span={3}>
+            <div className="label">
               <Dot />
-              <span style={labelStyle}>블랙리스트 상태</span>
-              <Checkbox.Group options={blackListStatus} />
+              <span>블랙리스트 상태</span>
             </div>
           </Col>
+          <Checkbox.Group options={blackListStatus} />
         </Row>
 
-        {/* 3 */}
-        <Row gutter={[3, 3]} align="middle" style={{ marginBottom: "0.8em" }}>
-          <Col span={14}>
-            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+        {/* Row 3 */}
+        <Row gutter={[3, 3]} align="middle" className="row-margin">
+          <Col span={3}>
+            <div className="label">
               <Dot />
-              <span style={labelStyle}>투자자유형</span>
-              <Checkbox.Group options={investorType} />
+              <span>투자자유형</span>
             </div>
           </Col>
-          <Col span={10}>
-            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+
+          <Col span={11}>
+            <Checkbox.Group options={investorType} />
+          </Col>
+
+          <Col span={3}>
+            <div className="label">
               <Dot />
-              <span style={labelStyle}>투자여부</span>
-              <Checkbox.Group options={investmentStatus} />
+              <span>투자여부</span>
             </div>
           </Col>
+          <Checkbox.Group options={investmentStatus} />
         </Row>
 
-        {/* 4 */}
-        <Row gutter={[3, 3]} align="middle" style={{ marginBottom: "0.8em" }}>
-          <Col span={14}>
-            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+        {/* Row 4 */}
+        <Row gutter={[3, 3]} align="middle" className="row-margin">
+          <Col span={3}>
+            <div className="label">
               <Dot />
-              <span style={labelStyle}>대출자유형</span>
-              <Checkbox.Group options={loanType} />
+              <span>대출자유형</span>
             </div>
           </Col>
-          <Col span={10}>
-            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <Col span={11}>
+            <Checkbox.Group options={loanType} />
+          </Col>
+          <Col span={3}>
+            <div className="label">
               <Dot />
-              <span style={labelStyle}>대출여부</span>
-              <Checkbox.Group options={loanAvailability} />
+              <span>대출여부</span>
             </div>
           </Col>
+          <Checkbox.Group options={loanAvailability} />
         </Row>
 
-        {/* 5 */}
-        <Row gutter={[3, 3]} align="middle" style={{ marginBottom: "0.8em" }}>
+        {/* Row 5 */}
+        <Row gutter={[3, 3]} align="middle" className="row-margin">
+          <Col span={3}>
+            <div className="label">
+              <Dot />
+              <span>투자유형승인여부</span>
+            </div>
+          </Col>
           <Col>
-            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-              <Dot />
-              <span style={labelStyle}>투자유형승인여부</span>
-              <Checkbox.Group options={investmentTypeApproval} />
-            </div>
+            <Checkbox.Group options={investmentTypeApproval} />
           </Col>
         </Row>
 
-        {/* 6 */}
-        <Row gutter={[3, 3]} align="middle" style={{ marginBottom: "0.8em" }}>
+        {/* Row 6 */}
+        <Row gutter={[3, 3]} align="middle" className="row-margin">
+          <Col span={3}>
+            <div className="label">
+              <Dot />
+              <span>투자/대출상태</span>
+            </div>
+          </Col>
           <Col>
-            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-              <Dot />
-              <span style={labelStyle}>투자/대출상태</span>
-              <Checkbox.Group options={loanStatus} />
-            </div>
+            <Checkbox.Group options={loanStatus} />
           </Col>
         </Row>
 
-        {/* 7 */}
+        {/* Row 7 */}
         <Row gutter={[3, 3]} align="middle">
-          <Col span={24}>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "10px",
-                width: "100%",
-              }}
-            >
+          <Col span={3}>
+            <div className="search-section">
               <Dot />
-              <span style={searchLabelStyle}>검색</span>
+              <span>검색</span>
+            </div>
+          </Col>
+          <Col span={21}>
+            <Flex gap={2}>
               <Select
                 style={{ width: 120 }}
                 options={[{ value: "회원명", label: "회원명" }]}
@@ -849,27 +1088,24 @@ const MemberManagement = () => {
               />
               <Input
                 placeholder="검색어를 입력해주세요."
-                style={{ width: "75%" }}
+                className="search-input"
               />
-            </div>
+            </Flex>
           </Col>
         </Row>
       </div>
       <Flex
         align="center"
         justify="space-between"
-        style={{ marginTop: "1em", width: "100%" }}
+        className="searchContainer"
+        style={{ border: "none" }}
       >
         <div style={{ display: "flex", justifyContent: "center", flexGrow: 1 }}>
-          <Button
-            style={{ height: "53px", width: "160px" }}
-            type="primary"
-            size="large"
-          >
+          <Button className="button-primary" type="primary" size="large">
             검색
           </Button>
         </div>
-        <Button style={{ width: "100px", height: "40px" }}>초기화</Button>
+        <Button className="button-secondary">초기화</Button>
       </Flex>
       <div style={{ marginTop: "30px" }}>
         <Flex
@@ -877,15 +1113,13 @@ const MemberManagement = () => {
           align="center"
           style={{ marginBottom: "12px" }}
         >
-          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-            <span style={{ fontSize: "20px", fontWeight: "600" }}>
-              회원 목록
-            </span>
-            <span style={{ fontSize: "14px", fontWeight: "500" }}>
+          <div className="list-header">
+            <span>회원 목록</span>
+            <span className="list-subheader">
               (총 100명 | 승인대기 <span style={{ color: "red" }}>10</span>명)
             </span>
           </div>
-          <div style={{ display: "flex", gap: "10px" }}>
+          <div className="list-options">
             <Select
               defaultValue="가입일시순"
               style={{ width: 120 }}
@@ -894,8 +1128,8 @@ const MemberManagement = () => {
               dropdownStyle={{ padding: 0 }}
             />
             <Select
-              style={{ width: 120 }}
               defaultValue="50개씩 보기"
+              style={{ width: 120 }}
               options={[{ value: "50개씩 보기", label: "50개씩 보기" }]}
               size="large"
               dropdownStyle={{ padding: 0 }}
@@ -905,16 +1139,13 @@ const MemberManagement = () => {
             </Button>
           </div>
         </Flex>
-        <div style={{ height: "1px", background: "#EEF0F4" }}></div>
-        <Flex
-          justify="flex-end"
-          style={{ marginTop: "6px", marginBottom: "8px" }}
-        >
-          <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+        <div className="table-divider"></div>
+        <Flex justify="flex-end" className="table-row">
+          <div className="table-controls">
             <span>선택한 0명 회원</span>
             <Select
-              style={{ width: 120 }}
               defaultValue="승인상태 변경"
+              style={{ width: 120 }}
               options={[{ value: "승인상태 변경", label: "승인상태 변경" }]}
               size="large"
               dropdownStyle={{ padding: 0 }}
@@ -933,10 +1164,10 @@ const MemberManagement = () => {
             }}
             columns={columns}
             dataSource={data}
-            pagination={{ position: ["bottomCenter"], pageSize: 20, }}
+            pagination={{ position: ["bottomCenter"], pageSize: 20 }}
             scroll={{ x: 1700 }}
             rowKey={(data) => data.NO}
-            rowClassName='tableRow'
+            rowClassName="tableRow"
           />
         </div>
       </div>

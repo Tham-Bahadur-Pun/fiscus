@@ -1,5 +1,5 @@
 import { Flex, Select, Table, TableColumnsType } from "antd";
-import ApprovalStatus from "../../components/ApprovalStatus";
+import ApprovalStatus from "../../../components/ApprovalStatus";
 
 interface DataType {
   NO: number;
@@ -391,16 +391,6 @@ const InquiryHistory = () => {
     }
   ];
   
-
-  const rowSelection = {
-    onChange: (selectedRowKeys: React.Key[], selectedRows: DataType[]) => {
-      console.log(
-        `selectedRowKeys: ${selectedRowKeys}`,
-        "selectedRows: ",
-        selectedRows
-      );
-    },
-  };
   return (
     <div>
       <Flex justify="space-between" style={{ marginBottom: "12px" }}>
@@ -435,10 +425,6 @@ const InquiryHistory = () => {
       <Table
         columns={columns}
         size="large"
-        rowSelection={{
-          type: "checkbox",
-          ...rowSelection,
-        }}
         dataSource={data}
         pagination={{ position: ["bottomCenter"], pageSize: 50, }}
         rowKey={(data) => data.NO}

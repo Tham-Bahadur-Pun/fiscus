@@ -17,11 +17,12 @@ const Header = ({
       className="container"
       align="center"
       style={{
-        width: "90%",
+        width: "90vw",
+      marginTop: "0.5rem"
       }}
     >
       <Flex
-        style={{ width: "40%", marginLeft: "3.5rem" }}
+        style={{ width: "40%", marginLeft: "3.5rem",}}
         align="center"
         gap={40}
       >
@@ -44,13 +45,14 @@ const Header = ({
               collapsed ? (
                 ""
               ) : (
-                <MdOutlineKeyboardArrowLeft color="#babebd" size={30} />
+                <MdOutlineKeyboardArrowLeft color="#A3A3A3" size={30} />
               )
             }
             onClick={onCollapsed}
             shape="circle"
             style={{
               fontSize: "16px",
+              marginLeft: '4px'
             }}
           />
         </div>
@@ -77,7 +79,10 @@ const Header = ({
           placeholder="메뉴 검색"
           style={{ width: "50%" }}
           type="search"
-        ></Input>
+          onClick={()=> <div>hello</div>}
+        >
+          
+        </Input>
         <Button icon={<CiShare1 color="#babebd" size={20} />} size="large" />
         <Button
           icon={<IoSettingsOutline color="#babebd" size={20} />}

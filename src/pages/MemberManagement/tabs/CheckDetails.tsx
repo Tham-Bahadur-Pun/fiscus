@@ -1,126 +1,49 @@
 import { Button, Col, Flex, Row, Select, Table, TableColumnsType } from "antd";
+import "./CheckDetails.css";
 
 const CheckDetails = () => {
   return (
     <div>
       <h5>계좌정보</h5>
-      <div style={{ border: "1px solid #d7d8da", marginBottom: '47px' }}>
+      <div style={{ border: "1px solid #d7d8da", marginBottom: "47px" }}>
         <Row>
-          <Col
-            span={4}
-            style={{
-              display: "flex",
-              paddingLeft: "1em",
-              alignItems: "center",
-              height: "50px",
-              background: "#EEF0F4",
-              borderBottom: "1px solid #fff",
-            }}
-          >
+          <Col span={4} className="rowStyle">
             <span>출금계좌</span>
           </Col>
-          <Col span={20} style={{
-              display: "flex",
-              alignItems: "center",
-              paddingLeft: "1.4em",
-              height: "50px",
-              borderBottom: "1px solid #EEF0F4",
-            }}>
+          <Col span={20} className="colStyle">
             <span>신한은행 123-45-678-90</span>
           </Col>
         </Row>
         <Row>
-          <Col
-            span={4}
-            style={{
-              display: "flex",
-              paddingLeft: "1em",
-              alignItems: "center",
-              height: "50px",
-              background: "#EEF0F4",
-              borderBottom: "1px solid #fff",
-            }}
-          >
+          <Col span={4} className="rowStyle">
             <span>예치금계좌</span>
           </Col>
-          <Col span={20} style={{
-              display: "flex",
-              alignItems: "center",
-              paddingLeft: "1.4em",
-              height: "50px",
-              borderBottom: "1px solid #EEF0F4",
-            }}>
+          <Col span={20} className="colStyle">
             <span>전북은행 012-33-22221</span>
           </Col>
         </Row>
         <Row>
-          <Col
-            span={4}
-            style={{
-              display: "flex",
-              paddingLeft: "1em",
-              alignItems: "center",
-              height: "50px",
-              background: "#EEF0F4",
-              borderBottom: "1px solid #fff",
-            }}
-          >
+          <Col span={4} className="rowStyle">
             <span>투자자잔액</span>
           </Col>
-          <Col span={20} style={{
-              display: "flex",
-              alignItems: "center",
-              paddingLeft: "1.4em",
-              height: "50px",
-              borderBottom: "1px solid #EEF0F4",
-            }}>
+          <Col span={20} className="colStyle">
             <span>10,000,000원</span>
           </Col>
         </Row>
         <Row>
-          <Col
-            span={4}
-            style={{
-              display: "flex",
-              paddingLeft: "1em",
-              alignItems: "center",
-              height: "50px",
-              background: "#EEF0F4",
-              borderBottom: "1px solid #fff",
-            }}
-          >
+          <Col span={4} className="rowStyle">
             <span>차입자잔액</span>
           </Col>
-          <Col span={20} style={{
-              display: "flex",
-              alignItems: "center",
-              paddingLeft: "1.4em",
-              height: "50px",
-              borderBottom: "1px solid #EEF0F4",
-
-            }}>
+          <Col span={20} className="colStyle">
             <span>10,000,000원</span>
           </Col>
         </Row>
         <Row>
-          <Col span={4}  style={{
-              display: "flex",
-              paddingLeft: "1em",
-              alignItems: "center",
-              height: "50px",
-              background: "#EEF0F4",
-              borderBottom: "1px solid #fff",
-            }}>
+          <Col span={4} className="rowStyle">
             <span>상환전용계좌</span>
           </Col>
-          <Col span={20} style={{
-              display: "flex",
-              alignItems: "center",
-              paddingLeft: "1.4em",
-              height: "50px",
-              borderBottom: "1px solid #EEF0F4",
-            }}>
-            <Button size="large" type="primary" className="btn-sec">
+          <Col span={20} className="colStyle">
+            <Button size="large" type="primary" className="btnStyle btn-sec">
               자세히 보기
             </Button>
           </Col>
@@ -192,10 +115,10 @@ const DepositWithdrawList = () => {
 
   return (
     <div>
-      <Flex justify="space-between" style={{marginBottom: '12px'}}>
+      <Flex justify="space-between" style={{ marginBottom: "12px" }}>
         <Flex gap={10}>
           <h5>입출금 목록</h5>
-          <span style={{marginTop:'0.5em'}}>(총 100건)</span>
+          <span style={{ marginTop: "0.5em" }}>(총 100건)</span>
         </Flex>
         <Flex gap={8}>
           <Select
@@ -205,9 +128,10 @@ const DepositWithdrawList = () => {
             dropdownStyle={{ padding: 0 }}
           />
           <Select
-            options={[{ value: "입출금 전체", label: "입출금 전체" },
+            options={[
+              { value: "입출금 전체", label: "입출금 전체" },
               { value: "입금", label: "입금" },
-              { value: "출금", label: "출금" }
+              { value: "출금", label: "출금" },
             ]}
             size="large"
             value="입출금 전체"
@@ -226,16 +150,18 @@ const DepositWithdrawList = () => {
             dropdownStyle={{ padding: 0 }}
           />
           <Select
-              defaultValue="50개씩 보기"
-              options={[
-                { value: "50개씩 보기", label: "50개씩 보기" },
-                { value: "100개씩 보기", label: "100개씩 보기" },
-                { value: "200개씩 보기", label: "200개씩 보기" },
-              ]}
-              size="large"
-              dropdownStyle={{ padding: 0 }}
-            />
-          <Button size="large" style={{ background: "#EBEEF3" }}>엑셀 다운로드</Button>
+            defaultValue="50개씩 보기"
+            options={[
+              { value: "50개씩 보기", label: "50개씩 보기" },
+              { value: "100개씩 보기", label: "100개씩 보기" },
+              { value: "200개씩 보기", label: "200개씩 보기" },
+            ]}
+            size="large"
+            dropdownStyle={{ padding: 0 }}
+          />
+          <Button size="large" style={{ background: "#EBEEF3" }}>
+            엑셀 다운로드
+          </Button>
         </Flex>
       </Flex>
       <Table
@@ -252,7 +178,7 @@ const DepositWithdrawList = () => {
         )}
         pagination={{ position: ["bottomCenter"] }}
         bordered
-        rowClassName='tableRow'
+        rowClassName="tableRow"
       />
     </div>
   );
