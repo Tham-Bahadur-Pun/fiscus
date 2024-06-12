@@ -105,3 +105,12 @@
     padding: 26px !important;
     margin-bottom: 0px !important
   }
+
+  .setting-list span{
+    padding: 10px 10px 5px 10px;
+  }
+
+  .setting-list:hover{
+    background-color: #F4F5F6;
+    cursor: pointer;
+  }

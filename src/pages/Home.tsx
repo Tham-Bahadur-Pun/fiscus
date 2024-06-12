@@ -354,7 +354,7 @@ const Home = () => {
       </Flex>
 
       <div className="tableContainer">
-        <Flex justify="space-between" align="center" className="tableHeader">
+        <Flex justify="space-between" align="center" className="tableHeader" flex='1 0 0'>
           <div className="tableTitle">
             <span className="tableTitleText">회원 목록</span>
             <span className="tableTitleCount">

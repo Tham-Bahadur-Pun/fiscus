@@ -1,8 +1,9 @@
 import { Avatar, Button, Flex, Input, Typography } from "antd";
 import { CiSearch, CiShare1 } from "react-icons/ci";
-import { IoSettingsOutline } from "react-icons/io5";
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
-import { TfiBell } from "react-icons/tfi";
+import NotificationList from "./NotificationList";
+import SettingList from "./SettingList";
+import SearchList from "./SearchList";
 
 const Header = ({
   collapsed,
@@ -11,20 +12,22 @@ const Header = ({
   collapsed: boolean;
   onCollapsed: () => void;
 }) => {
+
+
   return (
     <Flex
-      justify="space-between"
       className="container"
       align="center"
       style={{
         width: "90vw",
-      marginTop: "0.5rem"
+        marginTop: "0.5rem",
       }}
     >
       <Flex
-        style={{ width: "40%", marginLeft: "3.5rem",}}
+        style={{ marginLeft: "3.5rem" }}
         align="center"
-        gap={40}
+        gap={20}
+        flex="0.5 0 0"
       >
         <div
           style={{
@@ -52,7 +55,7 @@ const Header = ({
             shape="circle"
             style={{
               fontSize: "16px",
-              marginLeft: '4px'
+              marginLeft: "4px",
             }}
           />
         </div>
@@ -64,30 +67,34 @@ const Header = ({
             alt="user"
           />
           <Flex vertical style={{ marginTop: "1em" }}>
-            <Typography.Paragraph strong style={{ marginBottom: 0 }}>
+            <Typography.Paragraph
+              strong
+              style={{ marginBottom: 0, textWrap: "nowrap" }}
+            >
               김관리님{" "}
             </Typography.Paragraph>
-            <Typography.Paragraph>대출관리팀 </Typography.Paragraph>
+            <Typography.Paragraph style={{ textWrap: "nowrap" }}>
+              대출관리팀{" "}
+            </Typography.Paragraph>
           </Flex>
         </Flex>
       </Flex>
-      <Flex gap={8} align="center" style={{ width: "60%" }} justify="flex-end">
-        <Button icon={<TfiBell color="#babebd" size={20} />} size="large" />
-        <Input
+
+      <Flex gap={8} align="center"  justify="flex-end" flex="0.7 0 0">
+        <NotificationList />
+        {/* <Input
           prefix={<CiSearch size={25} color="#babebd" />}
           size="large"
           placeholder="메뉴 검색"
           style={{ width: "50%" }}
           type="search"
-          onClick={()=> <div>hello</div>}
-        >
-          
-        </Input>
+          onClick={() => <div>hello</div>}
+        ></Input> */}
+        <div style={{width:'50%'}}>
+          <SearchList />
+        </div>
         <Button icon={<CiShare1 color="#babebd" size={20} />} size="large" />
-        <Button
-          icon={<IoSettingsOutline color="#babebd" size={20} />}
-          size="large"
-        />
+        <SettingList/>
       </Flex>
     </Flex>
   );
