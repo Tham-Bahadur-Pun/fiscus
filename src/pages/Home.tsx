@@ -12,8 +12,8 @@ import {
 } from "antd";
 import { useEffect } from "react";
 import ApprovalStatus from "../components/ApprovalStatus";
-import ToggleButton from "../components/ToggleButton";
 import Dot from "../components/Dot";
+import ToggleButton from "../components/ToggleButton";
 
 interface DataType {
   NO: React.Key;
@@ -27,9 +27,7 @@ interface DataType {
   유형: string;
   GUID: string;
 }
-const labelStyle = {
-  fontSize: "1rem",
-};
+
 const Home = () => {
   useEffect(() => {
     document.title = "Home | Fiscus";
