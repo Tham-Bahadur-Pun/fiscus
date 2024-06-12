@@ -1,9 +1,9 @@
-import { Avatar, Button, Flex, Input, Typography } from "antd";
-import { CiSearch, CiShare1 } from "react-icons/ci";
+import { Avatar, Button, Flex, Typography } from "antd";
+import { CiShare1 } from "react-icons/ci";
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import NotificationList from "./NotificationList";
-import SettingList from "./SettingList";
 import SearchList from "./SearchList";
+import SettingList from "./SettingList";
 
 const Header = ({
   collapsed,
@@ -82,14 +82,6 @@ const Header = ({
 
       <Flex gap={8} align="center"  justify="flex-end" flex="0.7 0 0">
         <NotificationList />
-        {/* <Input
-          prefix={<CiSearch size={25} color="#babebd" />}
-          size="large"
-          placeholder="메뉴 검색"
-          style={{ width: "50%" }}
-          type="search"
-          onClick={() => <div>hello</div>}
-        ></Input> */}
         <div style={{width:'50%'}}>
           <SearchList />
         </div>
