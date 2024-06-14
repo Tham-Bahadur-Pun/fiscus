@@ -41,32 +41,40 @@ export const SignIn = () => {
             height: "100vh",
             maxWidth: "100%",
             backgroundSize: "cover",
-            backgroundPosition: "center",
+            backgroundPosition: "bottom",
             backgroundImage:
               "url('https://main.d3kaistnyhy60t.amplifyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogin-cover.fc484909.png&w=3840&q=75')",
-            padding: "2.5em",
+            padding: "40px",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
           }}
         >
-          <div
-            style={{
-              flex: 2 / 5,
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-            }}
-          >
+          <div>
             <img
               src="https://main.d3kaistnyhy60t.amplifyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-white.09a16de6.png&w=256&q=75"
               alt="company-logo"
-              width="159px"
-              height="29px"
+              width="148px"
+              height="26px"
             />
-            <div style={{ color: "#fff", justifySelf: "center" }}>
-              <h1 style={{ fontSize: "36px" }}>안녕하세요.</h1>
-              <h1 style={{ fontSize: "36px" }}>
+            <div style={{ color: "hashtag#fff", justifySelf: "center" }}>
+              <h1
+                style={{
+                  fontSize: "36px",
+                  fontWeight: "700",
+                  lineHeight: "54px",
+                  marginTop: "129px",
+                }}
+              >
+                안녕하세요.
+              </h1>
+              <h1
+                style={{
+                  fontSize: "36px",
+                  fontWeight: "700",
+                  lineHeight: "54px",
+                }}
+              >
                 P2P 투자/대출 관리 시스템 입니다.
               </h1>
             </div>
@@ -74,8 +82,8 @@ export const SignIn = () => {
           <div
             style={{ fontSize: "20px", display: "flex", alignItems: "center" }}
           >
-            <span style={{ color: "#fff", marginRight: "0.6em" }}>
-              이시스템은
+            <span style={{ color: "hashtag#fff", marginRight: "0.6em" }}>
+              이 시스템은
             </span>
             <img
               src="https://main.d3kaistnyhy60t.amplifyapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmufin-logo.db18347d.png&w=256&q=75"
